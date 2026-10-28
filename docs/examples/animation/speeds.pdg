@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 The predictygraph Authors
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
+graph dir=LR rank-gap=120 node-gap=16
+
+a1 "source"; b1 "target"
+a2 "source"; b2 "target"
+a3 "source"; b3 "target"
+
+a1 -> b1 "1.2s (default)" flow=forward
+a2 -> b2 "0.5s" flow=forward flow-speed=0.5s
+a3 ..> b3 "dashed body" flow=forward

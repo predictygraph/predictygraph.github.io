@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 The predictygraph Authors
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
+graph layout=row gap=48
+
+march "march" border=march
+pulse "pulse" border=pulse
+glow "glow" border=glow
+group g "group, march" border=march layout=row {
+  x "inside"
+}

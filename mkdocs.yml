@@ -1,0 +1,66 @@
+# SPDX-FileCopyrightText: 2026 The predictygraph Authors
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+site_name: predictygraph
+site_description: Predictable graphs. Diagrams as readable text, laid out the way you said, styled with plain CSS.
+site_url: https://predictygraph.github.io/
+repo_url: https://github.com/predictygraph/predictygraph
+repo_name: predictygraph/predictygraph
+edit_uri: https://github.com/predictygraph/predictygraph.github.io/edit/master/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - scheme: slate
+      primary: teal
+      toggle: { icon: material/weather-sunny, name: Light mode }
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+    - search.highlight
+
+extra_css:
+  - assets/extra.css
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Guide:
+      - guide/index.md
+      - Layouts: guide/layouts.md
+      - Edges and routing: guide/edges.md
+      - Styling: guide/styling.md
+      - Themes: guide/themes.md
+      - Animation: guide/animation.md
+  - Gallery:
+      - gallery/index.md
+      - Architecture: gallery/architecture.md
+      - Mermaid diagram types: gallery/mermaid.md
+      - Layout and routing: gallery/techniques.md
+  - Reference:
+      - reference/index.md
+      - Language spec: reference/spec.md
+      - Command line: reference/cli.md
+      - Editor support: reference/editors.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.snippets: { base_path: [docs] }
+  - pymdownx.tabbed: { alternate_style: true }

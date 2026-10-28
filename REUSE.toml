@@ -1,0 +1,22 @@
+version = 1
+
+# Rendered diagrams and generated theme samples (scripts/render_examples.py).
+[[annotations]]
+path = ["docs/examples/**/*.svg", "docs/examples/themes/*.pdg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "The predictygraph Authors"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Copy of docs/SPEC.md from the predictygraph repo, which is GPL.
+[[annotations]]
+path = "docs/reference/spec.md"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "The predictygraph Authors"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+
+# Git LFS attributes; a header comment would be harmless but LFS tools rewrite this file.
+[[annotations]]
+path = ".gitattributes"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "The predictygraph Authors"
+SPDX-License-Identifier = "GPL-3.0-or-later"

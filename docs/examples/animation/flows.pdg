@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 The predictygraph Authors
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
+graph dir=LR rank-gap=120 node-gap=16
+
+a1 "source"; b1 "target"
+a2 "source"; b2 "target"
+a3 "source"; b3 "target"
+a4 "source"; b4 "target"
+
+a1 -> b1 "forward" flow=forward
+a2 -> b2 "reverse" flow=reverse
+a3 <-> b3 "both" flow=both
+a4 <- b4 "auto" flow=auto

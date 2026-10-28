@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 The predictygraph Authors
+#
+# SPDX-License-Identifier: CC-BY-4.0
+
+graph dir=LR route=bend
+css {
+  edge.hot  { stroke: #dc2626; flow: forward; flow-speed: .6s; }
+  node.busy { stroke: #dc2626; border: pulse; border-speed: 1s; }
+}
+
+lb "load balancer"
+w1 "worker 1"
+w2 "worker 2" .busy
+q "queue" shape=cylinder
+
+lb -> w1
+lb -> w2 .hot
+w1 -> q
+w2 -> q .hot

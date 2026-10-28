@@ -1,0 +1,58 @@
+/*
+ * SPDX-FileCopyrightText: 2026 The predictygraph Authors
+ *
+ * SPDX-License-Identifier: CC-BY-4.0
+ */
+
+/* Diagrams: centred, never wider than the page, with a subtle frame. */
+.md-typeset img[src$=".svg"] {
+  display: block;
+  margin: 1em auto;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* Theme overview: a responsive card grid. */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+.theme-grid figure {
+  margin: 0;
+  padding: .5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+}
+.theme-grid figure img { margin: 0 auto; }
+.theme-grid figcaption { font-family: var(--md-code-font-family); font-size: .75rem; }
+
+/* Gallery overview: clickable thumbnails with a caption. */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+.gallery-grid > p { display: contents; }
+.gallery-grid a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: .6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  color: var(--md-default-fg-color);
+  transition: border-color .15s, box-shadow .15s;
+}
+.gallery-grid a:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: var(--md-shadow-z1);
+}
+.gallery-grid img {
+  height: 9rem;
+  width: 100%;
+  object-fit: contain;
+  margin: 0 0 .5rem;
+  background: #fff;
+}
+.gallery-grid span { font-size: .75rem; font-weight: 600; text-align: center; }
