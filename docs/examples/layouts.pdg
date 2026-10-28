@@ -1,0 +1,16 @@
+graph dir=LR layout=row gap=40
+css "theme.css"
+
+group layered "layout=layered" layout=layered dir=TB {
+  a -> b, c; b -> d; c -> d
+}
+group grid "layout=grid cols=2" layout=grid cols=2 {
+  g1; g2; g3; g4
+}
+group col "layout=column" layout=column {
+  r1; r2; r3
+}
+group radial "layout=radial" layout=radial center=hub {
+  hub; s1; s2; s3; s4; s5
+  hub -> s1, s2, s3, s4, s5
+}

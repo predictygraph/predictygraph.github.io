@@ -1,0 +1,44 @@
+site_name: predictygraph
+site_description: Predictable graphs. Readable diagram DSL with per-group layouts and plain-CSS styling.
+site_url: https://predictygraph.github.io/
+repo_url: https://github.com/predictygraph/predictygraph
+repo_name: predictygraph/predictygraph
+edit_uri: https://github.com/predictygraph/predictygraph.github.io/edit/master/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - scheme: slate
+      primary: teal
+      toggle: { icon: material/weather-sunny, name: Light mode }
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Language:
+      - Spec: spec.md
+      - Layouts: layouts.md
+      - Edges and routing: edges.md
+      - Styling and themes: styling.md
+      - Animation: animation.md
+  - Gallery: gallery.md
+  - Editor support: editors.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.snippets: { base_path: [docs] }
+  - pymdownx.tabbed: { alternate_style: true }
