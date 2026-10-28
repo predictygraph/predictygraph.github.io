@@ -1,0 +1,9 @@
+site/
+.venv/
+__pycache__/
+# generated from the .pdg sources at build time
+docs/examples/**/*.svg
+docs/examples/**/*.png
+docs/snippets/*.svg
+docs/snippets/*.png
+!docs/examples/icons/**

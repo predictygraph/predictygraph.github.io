@@ -1,0 +1,15 @@
+graph dir=LR route=ortho
+css "theme.css"
+
+user "Data scientist"
+group k8s "Kubernetes cluster" layout=layered dir=TB {
+  api "kube-apiserver"
+  sched "HAMi scheduler" .hami
+  api -> sched
+}
+group gpus "GPU nodes" layout=grid cols=2 {
+  default node .gpu
+  g0 "A100"; g1 "A100"; g2 "H100"; g3 "H100"
+}
+user -> api "submit pod"
+sched ==> gpus "bind" .hot
