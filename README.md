@@ -2,14 +2,24 @@
 
 Source of the [predictygraph documentation site](https://predictygraph.github.io/).
 
-Images are not committed. Every `.pdg` file under `docs/` is rendered to SVG (and animated
-PNG) at build time, so the pictures always match the current release.
+Images (`*.png`, `*.svg`) are stored with [Git LFS](https://git-lfs.com/), so the main
+predictygraph repo stays free of binaries. Install git-lfs before cloning.
+
+## Update the images
+
+Every `.pdg` under `docs/` has its rendered SVG (and animated PNG) committed next to it.
+After changing a diagram or releasing a new predictygraph, re-render and commit:
 
 ```sh
 uv sync
 uv run python scripts/render_examples.py docs --apng
+git add docs && git commit -m "docs: re-render examples"
+```
+
+## Preview
+
+```sh
 uv run mkdocs serve
 ```
 
-GitHub Actions builds and deploys `master` to GitHub Pages. A push to the
-predictygraph repo can trigger a rebuild with a `predictygraph-updated` repository dispatch.
+GitHub Actions builds `master` from the committed images and deploys it to GitHub Pages.

@@ -5,6 +5,11 @@ description = "Documentation site for predictygraph"
 requires-python = ">=3.11"
 dependencies = [
     "mkdocs-material>=9.5",
+]
+
+[dependency-groups]
+# Only needed to re-render the images (scripts/render_examples.py); CI uses the committed LFS files.
+render = [
     "predictygraph[apng] @ git+https://github.com/predictygraph/predictygraph@master",
 ]
 

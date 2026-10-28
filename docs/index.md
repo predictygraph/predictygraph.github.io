@@ -17,7 +17,7 @@ language where **each group picks its own layout**. Change one group and nothing
 ## Why
 
 - **Readable diffs.** One statement per line. No XML, no coordinates.
-- **Local layouts.** A layered flow can contain a grid, which can contain a radial cluster.
+- **Mix layouts.** Each box arranges its own contents. Put a grid of servers inside a step-by-step flow, and a circle of nodes inside that grid.
 - **Plain CSS.** A documented CSS subset, resolved by the tool. No browser, no JavaScript.
 - **Same input, same picture.** Deterministic SVG that looks the same in every viewer.
 - **Animated when you want it.** Flowing edges and animated borders, as SVG or APNG.
