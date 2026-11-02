@@ -45,6 +45,11 @@ sample, so you can see how animation looks in each theme.
 <figcaption>catppuccin-latte</figcaption>
 </figure>
 
+<figure markdown>
+![hami](../examples/themes/hami.svg)
+<figcaption>hami</figcaption>
+</figure>
+
 </div>
 
 ## Dark themes
@@ -147,6 +152,10 @@ edge-width = 1.5
 
 - Use it with `graph theme=my-theme.toml` (a path next to the diagram) or put it in a folder listed in `PDG_THEME_PATH`.
 - `extends = "nord"` starts from another theme and changes only the colours you list.
+- `css = """ ... """` (before the first `[table]`) adds your own rules after the generated
+  ones, with the palette available as variables. The `hami` theme uses it for header
+  bands, accent bars and grey second lines. With `extends`, both themes' rules apply,
+  the parent's first.
 - **Roles:** `accent`, `danger`, `node-fill`, `node-stroke`, `node-text`, `group-fill`, `group-stroke`, `group-text`, `edge`, `edge-text`.
 - Soft variants (`--red-soft` and so on) and `--bg-alt` are mixed automatically.
 

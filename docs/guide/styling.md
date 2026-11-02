@@ -24,13 +24,19 @@ css {
 `node`, `edge`, `group`, `graph`, `label`, `.class`, `#id`, compounds (`node.db`) and
 group descendants (`#cluster node`). Specificity and source order follow CSS.
 
+Text parts have their own selectors: `sub` (the `sub=` second line), `step` (numbered
+circles on edges), `legend` and `caption`. Scope them like descendants:
+`node.core sub { color: #dcfce7; }`.
+
 Precedence: built-in defaults < stylesheets < `default` statements < inline attributes.
 
 ## Properties
 
 - **Box:** `fill`, `stroke`, `stroke-width`, `stroke-dasharray`, `border-radius`, `padding`,
-  `min-width`, `min-height`, `opacity`, `shadow`
-- **Text:** `color`, `font-family`, `font-size`, `font-weight`, `font-style`, `text-align`
+  `min-width`, `min-height`, `opacity`, `shadow`, `accent-bar` (`4px #16a34a`, a strip
+  inside the left edge), `accent-side`, `title-fill` (groups: a band behind the title)
+- **Text:** `color`, `font-family`, `font-size` (`em` and `%` are relative to the owner),
+  `font-weight`, `font-style`, `text-align`
 - **Edge:** `stroke`, `stroke-width`, `stroke-dasharray`, `arrow`, `head`, `route`
 - **Variables:** `--name: value` and `var(--name, fallback)`
 

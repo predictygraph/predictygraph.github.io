@@ -76,3 +76,53 @@ An edge can end on a whole group instead of a single node.
     ```pdg
     --8<-- "examples/square.pdg"
     ```
+
+## HAMi documentation figures
+
+Three figures from the HAMi docs, redrawn with the `hami` theme. They use second lines
+(`sub=`), numbered steps, header bands, accent bars, a legend and a caption.
+
+### A Pod's path to a shared GPU
+
+Two panels with their own column layouts, numbered steps, and a notes panel.
+
+=== "Picture"
+
+    ![Pod to GPU](../examples/hami/pod_to_gpu.svg)
+
+=== "Source"
+
+    ```pdg
+    --8<-- "examples/hami/pod_to_gpu.pdg"
+    ```
+
+### The GPU stack
+
+`align=stretch` gives five tiers of equal width; the HAMi component is highlighted
+and named in the legend.
+
+=== "Picture"
+
+    ![GPU stack](../examples/hami/gpu_stack.svg)
+
+=== "Source"
+
+    ```pdg
+    --8<-- "examples/hami/gpu_stack.pdg"
+    ```
+
+### NVIDIA kernel modules
+
+Three stacked panels, a dashed box marking the compute modules, and an edge that goes
+around the display modules (`exit=left enter=left`). The original's side brackets aren't
+supported yet, so their text sits in the panel subtitles.
+
+=== "Picture"
+
+    ![NVIDIA kernel modules](../examples/hami/kernel_modules.svg)
+
+=== "Source"
+
+    ```pdg
+    --8<-- "examples/hami/kernel_modules.pdg"
+    ```
