@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2026 The predictygraph Authors
+SPDX-FileCopyrightText: 2026 Reza Jelveh
 
 SPDX-License-Identifier: CC-BY-4.0
 -->

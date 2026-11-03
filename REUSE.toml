@@ -4,7 +4,7 @@ version = 1
 [[annotations]]
 path = ["docs/examples/**/*.svg", "docs/examples/themes/*.pdg"]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "The predictygraph Authors"
+SPDX-FileCopyrightText = "Reza Jelveh"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 # Mascot logo and comics (AI-generated artwork).
@@ -14,16 +14,16 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "Reza Jelveh"
 SPDX-License-Identifier = "CC-BY-4.0"
 
-# Copy of docs/SPEC.md from the predictygraph repo, which is GPL.
+# Copy of docs/SPEC.md from the predictygraph repo.
 [[annotations]]
 path = "docs/reference/spec.md"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "The predictygraph Authors"
-SPDX-License-Identifier = "GPL-3.0-or-later"
+SPDX-FileCopyrightText = "Reza Jelveh"
+SPDX-License-Identifier = "Apache-2.0"
 
 # Git LFS attributes; a header comment would be harmless but LFS tools rewrite this file.
 [[annotations]]
 path = ".gitattributes"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "The predictygraph Authors"
-SPDX-License-Identifier = "GPL-3.0-or-later"
+SPDX-FileCopyrightText = "Reza Jelveh"
+SPDX-License-Identifier = "Apache-2.0"
