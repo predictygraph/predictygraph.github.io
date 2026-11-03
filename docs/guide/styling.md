@@ -25,8 +25,8 @@ css {
 group descendants (`#cluster node`). Specificity and source order follow CSS.
 
 Text parts have their own selectors: `sub` (the `sub=` second line), `step` (numbered
-circles on edges), `legend` and `caption`. Scope them like descendants:
-`node.core sub { color: #dcfce7; }`.
+circles on edges), `legend`, `caption` and `bracket` (side brackets). Scope them like
+descendants: `node.core sub { color: #dcfce7; }`.
 
 Precedence: built-in defaults < stylesheets < `default` statements < inline attributes.
 
@@ -34,7 +34,8 @@ Precedence: built-in defaults < stylesheets < `default` statements < inline attr
 
 - **Box:** `fill`, `stroke`, `stroke-width`, `stroke-dasharray`, `border-radius`, `padding`,
   `min-width`, `min-height`, `opacity`, `shadow`, `accent-bar` (`4px #16a34a`, a strip
-  inside the left edge), `accent-side`, `title-fill` (groups: a band behind the title)
+  inside the left edge), `accent-side`, `title-fill` (groups: a band behind the title),
+  `label-position: top|bottom|left` (groups; `left` turns the title vertical)
 - **Text:** `color`, `font-family`, `font-size` (`em` and `%` are relative to the owner),
   `font-weight`, `font-style`, `text-align`
 - **Edge:** `stroke`, `stroke-width`, `stroke-dasharray`, `arrow`, `head`, `route`

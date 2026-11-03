@@ -113,9 +113,9 @@ and named in the legend.
 
 ### NVIDIA kernel modules
 
-Three stacked panels, a dashed box marking the compute modules, and an edge that goes
-around the display modules (`exit=left enter=left`). The original's side brackets aren't
-supported yet, so their text sits in the panel subtitles.
+Three stacked panels with vertical titles (`label-position: left`), a dashed box marking
+the compute modules, an edge that goes around the display modules
+(`exit=left enter=left`), and two side brackets (`bracket nvidia, drm "..."`).
 
 === "Picture"
 
