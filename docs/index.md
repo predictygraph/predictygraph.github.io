@@ -23,7 +23,7 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 
 -   **Learn the language**
 
-    Layouts, edges, styling, themes and animation, one page each.
+    Layouts, edges, styling, annotations, themes and animation, one page each.
 
     [Guide](guide/index.md)
 
@@ -56,4 +56,4 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 - **Plain CSS.** Style with the CSS you know. No browser, no JavaScript.
 - **Same input, same picture.** Every viewer shows the same SVG.
 - **Animated when you want it.** Moving edges and pulsing borders, in a single small SVG file.
-- **Themes included.** Eleven colour themes, from Nord to Catppuccin. [See them all](guide/themes.md).
+- **Themes included.** Twelve colour themes, from Nord to Catppuccin. [See them all](guide/themes.md).

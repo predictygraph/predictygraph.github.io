@@ -43,7 +43,7 @@ Precedence: built-in defaults < stylesheets < `default` statements < inline attr
 
 ## Themes
 
-For ready-made colour schemes, set `graph theme=NAME`. See [Themes](themes.md) for all eleven, side by side.
+For ready-made colour schemes, set `graph theme=NAME`. See [Themes](themes.md) for all twelve, side by side.
 Your own CSS is applied on top of the theme.
 
 ## Example stylesheet

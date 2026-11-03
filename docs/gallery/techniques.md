@@ -63,3 +63,18 @@ Solid, thick, dashed, two-way and no arrowhead.
     ```pdg
     --8<-- "examples/arrows.pdg"
     ```
+
+## Annotations
+
+Second lines, numbered steps, a bracket, a legend, a caption, sideways panel titles and a
+box lined up with one in another panel. See [Annotations](../guide/annotations.md).
+
+=== "Picture"
+
+    ![Annotations tour](../examples/annotations.svg)
+
+=== "Source"
+
+    ```pdg
+    --8<-- "examples/annotations.pdg"
+    ```

@@ -9,13 +9,32 @@ SPDX-License-Identifier: CC-BY-4.0
 ## Install
 
 ```sh
-uv tool install "predictygraph @ git+https://github.com/predictygraph/predictygraph"
+uv tool install "predictygraph[apng]"     # or: pipx install "predictygraph[apng]"
 ```
 
 This gives you two commands: `predictygraph` and its short alias `pdg`. They are the same.
+`[apng]` adds PNG output; leave it out if you only need SVG.
 
-!!! note "PyPI"
-    Once predictygraph is on PyPI, `pip install predictygraph` or `uvx --from predictygraph pdg` will work too.
+To try it without installing: `uvx --from predictygraph pdg hello.pdg`.
+
+## Let your AI agent draw diagrams
+
+predictygraph ships an [agent skill](https://github.com/predictygraph/predictygraph/tree/master/skills/predictygraph):
+instructions, a syntax summary and examples that teach an AI agent to write `.pdg` files,
+render them and check the result.
+
+- **Hermes Agent:**
+
+    ```sh
+    hermes skills install https://raw.githubusercontent.com/predictygraph/predictygraph/master/skills/predictygraph/SKILL.md
+    ```
+
+- **Claude Code and other agents that read `SKILL.md` folders:** copy the
+  [`skills/predictygraph`](https://github.com/predictygraph/predictygraph/tree/master/skills/predictygraph)
+  folder into the agent's skills directory (for Claude Code: `~/.claude/skills/`).
+
+Then ask for a diagram, for example "draw our request path from the browser to the
+database as a predictygraph diagram".
 
 ## Your first diagram
 

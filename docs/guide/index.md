@@ -11,5 +11,7 @@ One page per topic. Every picture here is drawn from the `.pdg` source shown abo
 - [Layouts](layouts.md): how boxes are arranged, and how each group picks its own arrangement.
 - [Edges and routing](edges.md): arrow styles, routing styles, and pinning which side an edge uses.
 - [Styling](styling.md): CSS selectors and properties.
-- [Themes](themes.md): the eleven built-in colour themes, and how to write your own.
+- [Annotations](annotations.md): second lines, numbered steps, brackets, legend, caption,
+  equal-sized panels and lining up boxes across panels.
+- [Themes](themes.md): the twelve built-in colour themes, and how to write your own.
 - [Animation](animation.md): flowing edges and animated borders.
