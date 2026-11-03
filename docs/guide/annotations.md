@@ -45,8 +45,9 @@ browser -> cdn
 cdn -> api "cache miss"
 ```
 
-A step sits a third of the way along its arrow, or just left of the arrow's label. Style
-it with `step`: `step { fill: var(--green); }`.
+A step sits just left of the arrow's label. Without a label it sits on the arrow a third of
+the way along, or beside the arrow when the arrow is too short to hold it, so it never
+covers a box. Gaps in a column grow to fit it. Style it with `step`: `step { fill: var(--green); }`.
 
 ## Brackets
 
