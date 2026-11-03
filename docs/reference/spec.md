@@ -45,6 +45,44 @@ Nodes referenced in an edge but never declared are created implicitly in the
 first declared or referenced — so declare nodes inside their group first and connect
 them from anywhere.
 
+### 2.1 Variables and reusable blocks
+
+```
+let NAME = VALUE                   # value variable, VALUE = identifier, number, string or x,y
+def NAME [PARAM[=DEFAULT]...] {    # reusable block
+  ...statements...
+}
+use NAME ID ["Label"] [.class...] [PARAM=VALUE...] [attrs]   # place a copy of the block
+```
+
+- `$NAME` is replaced by the variable's value anywhere a value can stand: labels,
+  attribute values, class names. Inside strings write `"${NAME}"`. An unknown `$NAME`
+  is an error. Variables follow scope: one set in a group is visible only in that group.
+- `def` statements produce nothing. `use` places one copy of the block as a `group`
+  with the given `ID`, label, classes and attrs, so it gets its own layout like any group.
+- Inside a block, `$ID` and `$LABEL` refer to the `use` line's ID and label, and each
+  parameter is a variable. Parameters without a default must be given on `use`.
+- **IDs inside a block are local.** A copy's node `cpu` becomes `ID-cpu`, so two copies
+  never clash. Connect to it from outside with that full name (`node1-cpu -> switch`).
+- `def` may appear anywhere before its first `use`; a block may `use` other blocks but
+  not itself.
+
+```
+let accent = "#3939D8"
+
+def server gpus=2 {
+  cpu "CPU"
+  gpu "GPU x${gpus}" fill=$accent
+  cpu -> gpu
+}
+
+group rack layout=row {
+  use server node1 "Node 1"
+  use server node2 "Node 2" gpus=8
+}
+scheduler -> node1-cpu, node2-cpu
+```
+
 ## 3. Edges
 
 Arrow token = optional `<`, a body of `-`, `=` or `.` characters, optional `>`
@@ -85,7 +123,8 @@ Per-edge attributes override arrow defaults:
   a deliberate bus and stay merged; a dashed `..>` path into the same node is a
   distinct trace and gets its own lane.
 - `exit=top|bottom|left|right`, `enter=...` — pin the side an edge leaves/enters (port at the
-  side's middle). Mixed vertical/horizontal sides draw an L with one rounded corner.
+  side's middle). Mixed vertical/horizontal sides draw an L with one rounded corner. The same
+  side at both ends (`exit=left enter=left`) draws a C that goes around every box between.
 
 Automatic routing rules (layered layouts):
 - Edges between the same two nodes are offset in parallel; `A <-> B` draws one double-headed edge.
@@ -111,6 +150,40 @@ Edge endpoints may be node IDs or group IDs. `a -> pool` attaches to the group's
 - `width=W height=H` — minimum size.
 - `at=x,y` — position, only honoured by `layout=fixed`.
 - `rank=N` (layered) / `row=R col=C` (grid) — pin a slot.
+- `align-x=ID` — after layout, centre this node or group horizontally on another item,
+  even one in a different panel (line a box up with the one it calls below). It only
+  moves inside its parent's content box and never past a sibling, so nothing overlaps.
+- `sub="second line"` — secondary text under the label, on nodes and groups. Styled with
+  the `sub` selector (default: grey, 0.85em, never bold); `node.x sub { ... }` targets one
+  class. `\n` makes several lines.
+
+### 4.1 Annotations
+
+- **Steps:** `a -> b step=3` draws a numbered circle for the edge: just left of the edge
+  label when there is one; otherwise on the line a third of the way along, or, when the
+  edge is too short for that (three circle widths), beside its middle, clear of any box.
+  Column gaps with a numbered edge widen to fit the circle. `graph steps=auto`
+  numbers every edge without its own `step=` in file order. Styled with `step`
+  (`fill` is the circle, `color` the number).
+- **Legend:** `legend "Key"` names the box; `legend .green "HAMi component"` adds an
+  entry whose swatch is styled like a node with those classes. Drawn under the diagram;
+  top level only, at most 64 entries. Styled with `legend`.
+- **Caption:** `graph caption="Figure 1: ..."` draws a line under the diagram (and the
+  legend). Styled with `caption` (default: grey, italic, centred).
+- **Accent bar:** CSS `accent-bar: 4px #16a34a` draws a strip inside the box edge and
+  widens the box by its width; `accent-side: left|right`. `accent-bar: none` removes it.
+- **Header band:** CSS `title-fill: #dbeafe` on a group fills a strip behind its title
+  and subtitle. Ignored with `label-position: bottom`.
+- **Vertical panel label:** CSS `label-position: left` on a group turns its title 90°
+  and puts it in a column at the panel's left edge. Padding moves the content, not the
+  label, so a left `padding` makes room for an edge to pass between them.
+- **Side brackets:** `bracket a, b "note"` draws a curly bracket right of the diagram
+  from the top of the highest listed item to the bottom of the lowest, with the note
+  beside it. Overlapping brackets stack outward, shorter spans nearest the diagram.
+  Top level only; styled with `bracket` (`stroke`, `stroke-width`, text keys).
+
+Not yet supported: highlight boxes that don't change the layout, and badges on node
+corners.
 
 ## 5. Layouts (balancing styles)
 
@@ -127,7 +200,9 @@ routed between real nodes.
   - `order=source|auto` — `source` keeps file order inside each rank (no
     crossing minimisation, the most stable); `auto` minimises crossings.
 - `layout=grid` — `cols=N` (or `rows=N`), `align=center|start|end`, `gap=24`.
-- `layout=row` / `layout=column` — single line, `align=`, `gap=`.
+- `layout=row` / `layout=column` — single line, `align=`, `gap=`. `align=stretch` makes
+  every child as wide (column) or tall (row) as the largest — equal-width tiers for
+  stack diagrams. A stretched group keeps its content left; `justify=center` centres it.
 - `layout=radial` — `center=ID` (default first child), `radius=auto|N`.
 - `layout=fixed` — children use `at=x,y` (top-left, relative to the container).
 
@@ -141,6 +216,16 @@ compounds (`node.db`, `edge.hot`), group descendant (`#cluster node`). Specifici
 and source order follow CSS. Order of precedence:
 built-in defaults < stylesheets < `default` statements < inline attributes.
 
+Stylesheets are layered, each overriding the one before:
+
+1. `default.css`, shipped with predictygraph (font, sizes, neutral colours)
+2. the theme (`graph theme=…` or `--theme`), if any
+3. css in the `.pdg` file (`css { … }` blocks and `css "file.css"`)
+4. `--css` files given on the command line
+
+Themes only set colours and shape unless their TOML sets `[shape] font`, so the
+default font survives a theme change.
+
 Supported properties:
 
 - Box: `fill`, `stroke`, `stroke-width`, `stroke-dasharray`, `border-radius`,
@@ -150,6 +235,42 @@ Supported properties:
 - Group: everything a node has plus `label-position: top|bottom`
 - Custom properties `--name: value` and `var(--name)` are supported, so slidr themes
   can share palettes.
+
+### 6.1 Render targets and fonts
+
+Labels are measured to size their boxes, but drawn later by whatever shows the SVG.
+If the viewer uses a different font from the one measured, labels overflow their boxes
+(wider font) or leave gaps (narrower font). A *target* names where the SVG will be shown,
+so the measurement matches:
+
+- `host` (default): fonts installed on the machine running predictygraph; a bundled copy
+  if the font is not installed.
+- `linux`, `macos`, `windows`: the first font in the `font-family` list that the platform
+  ships; generic families (`sans-serif`, …) resolve the way that platform does.
+- `web`: every font in the list is measured and boxes fit the widest, so labels fit
+  whichever font a browser picks.
+
+Set it with `graph target=web` or `--target web` (the option wins).
+
+The default font is `Roboto, Arial, "Helvetica Neue", sans-serif`. Roboto is not
+bundled: pages showing the SVG should load it as a web font. Without it, viewers fall
+back to Arial/Helvetica. Platform-specific fonts go in `@target` blocks, which apply
+only when the active target is listed:
+
+```css
+graph { font-family: Roboto, Arial, "Helvetica Neue", sans-serif; }
+@target linux   { graph { font-family: "DejaVu Sans", sans-serif; } }
+@target windows { graph { font-family: Arial, sans-serif; } }
+```
+
+predictygraph bundles width-only copies of DejaVu Sans, Liberation Sans/Serif/Mono and
+Carlito. Liberation and Carlito have the same character widths as Arial/Helvetica,
+Times New Roman, Courier New and Calibri, so those are measured exactly. Any other font
+with no bundled or installed copy is measured with DejaVu Sans, with a warning.
+
+**An SVG made for one target can overflow on another.** For example, a diagram made with
+`--target windows` (Arial) and opened on Linux (DejaVu Sans, 10–15% wider) has labels that
+run past their boxes. Use `web` for files that are shared or published.
 
 ## 7. Animation
 

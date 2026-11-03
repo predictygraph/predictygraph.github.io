@@ -51,6 +51,14 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 
 ![The snippet above, rendered](examples/hello.svg)
 
+Reuse a block with `def` and `use`, and share values with `let`:
+
+```pdg
+--8<-- "examples/blocks.pdg"
+```
+
+![The snippet above, rendered](examples/blocks.svg)
+
 ## Why predictygraph
 
 - **Readable diffs.** One statement per line. No XML, no coordinates.
