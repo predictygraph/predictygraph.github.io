@@ -8,10 +8,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 **Predictable graphs.** Diagrams as readable text, laid out the way you said, styled with plain CSS.
 
-![HAMi scheduling flow](examples/animation/blueprint_flow.svg)
-
-Mermaid and Graphviz rearrange your whole picture when you change one box.
-predictygraph doesn't: **each group picks its own layout**, so a change stays where you made it.
+![A developer adds one box and the diagram turns to spaghetti. A buff guy bursts through the wall with diagram.pdg, and the diagram comes out the same way every time.](assets/brand/comic-strip.webp){ .comic }
 
 <div class="grid cards" markdown>
 
@@ -41,6 +38,11 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 
 </div>
 
+![HAMi scheduling flow](examples/animation/blueprint_flow.svg)
+
+Mermaid and Graphviz rearrange your whole picture when you change one box.
+predictygraph doesn't: **each group picks its own layout**, so a change stays where you made it.
+
 ## A taste
 
 ```pdg
@@ -50,8 +52,6 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 ![The snippet above, rendered](examples/hello.svg)
 
 ## Why predictygraph
-
-![A developer adds one box and the diagram turns to spaghetti. A buff guy bursts through the wall with diagram.pdg, and the diagram comes out the same way every time.](assets/brand/comic-strip.webp){ .comic loading=lazy }
 
 - **Readable diffs.** One statement per line. No XML, no coordinates.
 - **Mix layouts.** Each box arranges its own contents. Put a grid of servers inside a step-by-step flow, and a circle of nodes inside that grid.
