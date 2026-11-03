@@ -1,4 +1,4 @@
-# Predictygraph DSL — specification v0.1 (draft)
+# Predictygraph DSL — specification v0.2 (draft)
 
 Predictygraph is a small, line-oriented text format for diagrams (flowcharts, architecture
 graphs, trees, grids). Design goals:
