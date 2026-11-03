@@ -51,6 +51,8 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 
 ## Why predictygraph
 
+![A developer adds one box and the diagram turns to spaghetti. A buff guy bursts through the wall with diagram.pdg, and the diagram comes out the same way every time.](assets/brand/comic-strip.webp){ .comic loading=lazy }
+
 - **Readable diffs.** One statement per line. No XML, no coordinates.
 - **Mix layouts.** Each box arranges its own contents. Put a grid of servers inside a step-by-step flow, and a circle of nodes inside that grid.
 - **Plain CSS.** Style with the CSS you know. No browser, no JavaScript.

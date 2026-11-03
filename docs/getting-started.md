@@ -6,6 +6,8 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # Getting started
 
+![Your diagram called. It wants its boxes back where you left them.](assets/brand/diagram-called.webp){ .comic .meme loading=lazy }
+
 ## Install
 
 ```sh

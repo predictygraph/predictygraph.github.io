@@ -11,12 +11,16 @@ edit_uri: https://github.com/predictygraph/predictygraph.github.io/edit/master/d
 
 theme:
   name: material
+  logo: assets/brand/logo.png
+  favicon: assets/brand/favicon.png
   palette:
     - scheme: default
-      primary: teal
+      primary: red
+      accent: amber
       toggle: { icon: material/weather-night, name: Dark mode }
     - scheme: slate
-      primary: teal
+      primary: red
+      accent: amber
       toggle: { icon: material/weather-sunny, name: Light mode }
   features:
     - navigation.tabs

@@ -56,3 +56,14 @@
   background: #fff;
 }
 .gallery-grid span { font-size: .75rem; font-weight: 600; text-align: center; }
+
+/* Branding: the mascot comic and meme. */
+.md-typeset img.comic {
+  display: block;
+  margin: 1.5em auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--md-shadow-z1);
+}
+.md-typeset img.meme { max-width: 26rem; }
+.md-header__button.md-logo img { height: 2rem; }

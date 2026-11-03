@@ -7,6 +7,13 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "The predictygraph Authors"
 SPDX-License-Identifier = "CC-BY-4.0"
 
+# Mascot logo and comics (AI-generated artwork).
+[[annotations]]
+path = "docs/assets/brand/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Reza Jelveh"
+SPDX-License-Identifier = "CC-BY-4.0"
+
 # Copy of docs/SPEC.md from the predictygraph repo, which is GPL.
 [[annotations]]
 path = "docs/reference/spec.md"
