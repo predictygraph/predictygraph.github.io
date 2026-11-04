@@ -38,7 +38,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 </div>
 
-![HAMi scheduling flow](examples/animation/blueprint_flow.svg)
+![HAMi scheduling flow](examples/themes/hami.svg)
 
 Mermaid and Graphviz rearrange your whole picture when you change one box.
 predictygraph doesn't: **each group picks its own layout**, so a change stays where you made it.
