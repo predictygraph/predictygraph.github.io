@@ -90,3 +90,13 @@ pdg x.pdg --static      # no animation, first frame
 pdg x.pdg --at 0.4      # frozen at 0.4 s
 pdg x.pdg -o x.png      # animated PNG, for places that can't show SVG (much larger)
 ```
+
+## Trunkline
+
+The `trunkline` theme pairs `flow=draw`, `flow-dot=ring`, `grid=` and `corner-marks` for a dark network-planner look.
+
+```pdg
+--8<-- "examples/animation/trunkline.pdg"
+```
+
+![Trunkline](../examples/animation/trunkline.svg)
