@@ -17,6 +17,7 @@ System and infrastructure diagrams, the kind you put on a slide.
 [![HAMi scheduling](../examples/hami_flow.svg)<span>HAMi scheduling</span>](architecture.md#hami-scheduling)
 [![GPU box to GPU cloud](../examples/blueprint/blueprint.svg)<span>GPU box to GPU cloud</span>](architecture.md#gpu-box-to-gpu-cloud)
 [![Animated blueprint](../examples/animation/blueprint_flow.svg)<span>Animated blueprint</span>](architecture.md#animated-blueprint)
+[![Trunkline backbone](../examples/animation/trunkline.svg)<span>Trunkline backbone</span>](architecture.md#trunkline-backbone)
 [![Edges to groups](../examples/square.svg)<span>Edges to groups</span>](architecture.md#edges-to-groups)
 
 </div>

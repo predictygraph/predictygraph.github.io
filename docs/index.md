@@ -51,6 +51,14 @@ predictygraph doesn't: **each group picks its own layout**, so a change stays wh
 
 ![The snippet above, rendered](examples/hello.svg)
 
+Style it like a network planner with the `trunkline` theme, animated flows and `fan=spread` branches:
+
+```pdg
+--8<-- "examples/animation/trunkline.pdg"
+```
+
+![The snippet above, rendered](examples/animation/trunkline.svg)
+
 Reuse a block with `def` and `use`, and share values with `let`:
 
 ```pdg

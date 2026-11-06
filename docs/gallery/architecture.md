@@ -63,6 +63,20 @@ The same idea with moving edges showing where requests go.
     --8<-- "examples/animation/blueprint_flow.pdg"
     ```
 
+## Trunkline backbone
+
+A dual-path backbone on the `trunkline` theme: ring flows, a draw-in route and `fan=spread` branches.
+
+=== "Picture"
+
+    ![Trunkline backbone](../examples/animation/trunkline.svg)
+
+=== "Source"
+
+    ```pdg
+    --8<-- "examples/animation/trunkline.pdg"
+    ```
+
 ## Edges to groups
 
 An edge can end on a whole group instead of a single node.
